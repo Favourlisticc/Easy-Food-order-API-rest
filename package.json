@@ -2,9 +2,10 @@
   "name": "food-web",
   "version": "1.0.0",
   "description": "An easy website to get your food",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "cross-env NODE_ENV=development nodemon src/app.js"
   },
   "author": "Simon Favour",
   "license": "ISC",
