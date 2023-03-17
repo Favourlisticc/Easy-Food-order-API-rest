@@ -1,0 +1,41 @@
+
+.divblanding{
+    margin-left: 50px;
+}
+.landing-ul{
+    margin-left: 30%;
+
+}
+.landing-ul > li:hover{
+    border-bottom: 4px orange double     !important;
+    background:none !important;
+}
+.landing-ul > div {
+    margin-left: 60%;
+}
+.font-size{
+    font-size: 20px;
+}
+.bold{
+    font-weight: 600;
+}
+.button-radius{
+  border-radius: 40px
+}
+.width-50px{
+    height: 100px;
+}
+
+.hovered:hover{
+    border-bottom: 5px solid orange;
+    background-color: inherit;
+}
+.landingimg{
+    width: 400px;
+    height: 600px;
+}
+.landing-grid{
+    display: grid;
+  grid-template-columns: 400px 600px;
+  align-content: space-between;
+}

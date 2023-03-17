@@ -1,8 +1,24 @@
 const { Router } = require('express')
 const router = Router();
 
+// req Get for landing page
 router.get('/', (req, res) =>{
-    res.send("landing page")
+    res.render("landingpage")
 })
+
+// req Get for dashboard
+router.get('/login', (req, res) =>{
+    res.render("login")
+})
+router.get('/signup', (req, res) =>{
+    res.render("signup")
+})
+
+// req Get for dashboard
+router.get('/dashboard', (req, res) =>{
+    res.render("dashboard")
+})
+
+
 
 module.exports = router;
