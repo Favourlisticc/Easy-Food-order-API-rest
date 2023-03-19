@@ -39,3 +39,18 @@
   grid-template-columns: 400px 600px;
   align-content: space-between;
 }
+.review{
+    display: grid;
+    grid-template-columns: 80px auto;
+    margin-top: 100px;
+}
+.review-img{
+    width: 35px;
+    border-radius: 400px;
+    border: 3px solid white;
+}
+.review-grid{
+    display: grid;
+    grid-template-columns: 20px 20px 20px;
+    margin-top: 10px;
+}

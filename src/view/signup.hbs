@@ -1,1 +1,35 @@
-<h3>Signup</h3>
+<div class="container">
+  <h1 class="brand-logo center black-text">  <span> Sign up to</span> F <span class="red-text center">OO</span> D</h1>
+  <div>
+    <div class="row">
+    <form action="/signup" method="POST">
+
+        <div class="input-field col s12">
+          <input id="firstName" name="firstName"  type="text"  class="validate">
+          <label for="firstName">First Name</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input id="lastName" name="lastName"  type="text"  class="validate">
+          <label for="lastName">Last Name</label>
+        </div>
+
+
+        <div class="input-field col s12">
+          <input id="email" name="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input id="password" type="password"  name="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+
+       <div class="row">
+            <input type="submit" value="save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+  </div>
+  </div>
+</div>

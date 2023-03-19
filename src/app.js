@@ -2,16 +2,45 @@ const express = require('express')
 const morgan = require('morgan')
 const exphbs = require('express-handlebars');
 const path = require('path');
+const passport = require('passport')
+const session = require('express-session')
+const mongoStore = require('connect-mongo')
+const stratrgy = require('./strategy/signup')
+const mongoose = require('mongoose');
+const flash = require('connect-flash');
 
-//importing routes
-const index = require('./routes/index')
 
 
+require('./database/schemas/signin')
+
+require('./database/mongodb')
 
 const app = express()
 
-//database calling
-require('./Configure/mongodb')
+//importing routes
+const index = require('./routes/index')
+const auth = require('./routes/auth')
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// set up session cookies
+app.use(session(
+{
+  secret: 'AVJHJHGFYTFYFUYFKIJOYOLMLSZKK',
+  resave: false,
+  saveUninitialized: false,
+  store : mongoStore.create({
+    mongoUrl: 'mongodb+srv://favour:favoursu@cluster0.1i4m3zl.mongodb.net/test'
+  })
+}
+))
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 
 
 //Static folder
@@ -36,6 +65,7 @@ app.set('views', viewspath)
 
 //calling routes so we can use it
 app.use('/', index)
+app.use('/', auth)
 
 
 //PORT

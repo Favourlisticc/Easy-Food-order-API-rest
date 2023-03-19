@@ -3,15 +3,21 @@ const router = Router();
 
 // req Get for landing page
 router.get('/', (req, res) =>{
-    res.render("landingpage")
+    res.render("landingpage", {
+        layout: 'landingpage',
+    })
 })
 
 // req Get for dashboard
 router.get('/login', (req, res) =>{
-    res.render("login")
+    res.render("login", {
+        layout: 'login',
+    })
 })
 router.get('/signup', (req, res) =>{
-    res.render("signup")
+    res.render("signup", {
+        layout: 'signup',
+    })
 })
 
 // req Get for dashboard
