@@ -9,10 +9,7 @@ const stratrgy = require('./strategy/signup')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 
-
-
 require('./database/schemas/signin')
-
 require('./database/mongodb')
 
 const app = express()
@@ -31,7 +28,7 @@ app.use(session(
   resave: false,
   saveUninitialized: false,
   store : mongoStore.create({
-    mongoUrl: 'mongodb+srv://favour:favoursu@cluster0.1i4m3zl.mongodb.net/test'
+    mongoUrl: '*****'
   })
 }
 ))
@@ -65,7 +62,7 @@ app.set('views', viewspath)
 
 //calling routes so we can use it
 app.use('/', index)
-app.use('/', auth)
+app.use('/auth', auth)
 
 
 //PORT

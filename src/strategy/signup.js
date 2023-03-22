@@ -2,7 +2,11 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('../database/schemas/signin');
 const { hashPassword, comparePassword} = require('../utils/hashcomp')
+const GoogleStrategy = require('passport-google-oauth20').Strategy
+const googleUser = require('../database/schemas/googleschema')
 
+
+//serializing and deserializing user middleware
 passport.serializeUser((user, done) => {
   console.log('Serializing user');
   console.log(user)
@@ -22,6 +26,8 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
+
+// passport signup strategy using local-passport strategy
 passport.use('signup', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
@@ -59,6 +65,7 @@ async (req, email, password, done) => {
 }
 ));
 
+// passport login strategy using local-passport strategy
 passport.use('login', new LocalStrategy({
   usernameField: 'email',
  },
@@ -85,3 +92,36 @@ passport.use('login', new LocalStrategy({
   }
 )
 )
+
+// passport google strategy using passport-google-auth20
+passport.use('google'  ,new GoogleStrategy({
+  clientID: '*****',
+  clientSecret: '****',
+  callbackURL: "http://localhost:3002/auth/google/callback"
+},
+async(accessToken, refreshToken, profile, done) => {
+  console.log(profile)
+
+  const newUser = {
+      googleId: profile.id,
+      displayName: profile.displayName,
+      firstName: profile.name.familyName,
+      lastName: profile.name.givenName,
+      email: profile.emails[0].value,
+      image: profile.photos[0].value,
+
+  }
+
+  try{
+      let user = await googleUser.findOne({email: profile.emails[0].value})
+  if(user){
+      done(null, user)
+  }else{
+      user = await googleUser.create(newUser)
+      done(null, user)
+  }
+}catch(err){
+console.log(err)
+}
+}
+));

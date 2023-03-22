@@ -17,7 +17,11 @@ const signUpSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  createdAt: {
+    type: Date,
+   default: new Date()
+},
 });
 
 const SignUp = mongoose.model('SignUp', signUpSchema);

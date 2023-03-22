@@ -8,12 +8,14 @@ router.get('/', (req, res) =>{
     })
 })
 
-// req Get for dashboard
+// req Get for login page
 router.get('/login', (req, res) =>{
     res.render("login", {
         layout: 'login',
     })
 })
+
+// req Get for signup page
 router.get('/signup', (req, res) =>{
     res.render("signup", {
         layout: 'signup',
