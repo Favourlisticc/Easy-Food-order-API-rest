@@ -1,41 +1,51 @@
-<div class="container">
-  <h1 class="brand-logo center black-text">  <span> Sign up to</span> F <span class="red-text center">OO</span> D</h1>
+<div class="container-2">
+  <h1 class="header center black-text">  <span> Sign up to</span> F <span class="green-text center">OO</span> D</h1>
+  <p style="text-align: center;" class="grey-text"  >Got an account already? <a href="login" class="green-text lighten-4" >Log in</a>   </p>
   <div>
-    <div class="row">
-    <form action="/signup" method="POST">
+    <div class="">
+    <div class="google">
+        <a href="/auth/google" class="black-text" style="padding-right: 30px;">
+         <i class="fab fa-google left  red-text" style="padding-top: 0.5%; font-size: 150%"></i> Log in with google
+        </a>
+    </div>
+    <div class="divider-1" style="text-align: center;">
+      <hr>
+     <p style="margin: 0px 5%;"  > OR CREATE ACCOUNT</p>
+      <hr>
+    </div>
+  </div>
+    <form action="/auth/signup" method="POST" style="margin-left: 40px; margin-right: 40px">
 
         <div class="input-field col s12">
+         <i class="material-icons prefix">account_circle</i>
+
           <input id="firstName" name="firstName"  type="text"  class="validate">
           <label for="firstName">First Name</label>
         </div>
 
         <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
           <input id="lastName" name="lastName"  type="text"  class="validate">
           <label for="lastName">Last Name</label>
         </div>
 
 
         <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
           <input id="email" name="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
 
         <div class="input-field col s12">
+          <i class="material-icons prefix">password</i>
           <input id="password" type="password"  name="password" class="validate">
           <label for="password">Password</label>
         </div>
 
-       <div class="row">
-            <input type="submit" value="save" class="btn">
-            <a href="/dashboard" class="btn orange">Cancel</a>
+       <div class="row center">
+            <input type="submit" value="SIGNUP" class="signup-btn">
         </div>
     </form>
   </div>
-<div class="divider"></div>
-    <div class="section">
-        <a href="/auth/google" class="btn red darken-1">
-         <i class="fab fa-google left"></i> Log in with google
-        </a>
-    </div>
-  </div>
+
 </div>

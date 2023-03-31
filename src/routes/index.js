@@ -27,6 +27,20 @@ router.get('/dashboard', (req, res) =>{
     res.render("dashboard")
 })
 
+// req Get for about-us
+router.get('/about-us', (req, res) =>{
+    res.render("aboutus", {
+      layout: 'landingpage',
+    })
+})
+
+// req Get contact-us page
+router.get('/contact-us', (req, res) =>{
+    res.render("contactus", {
+      layout: 'landingpage',
+    })
+})
+
 
 
 module.exports = router;

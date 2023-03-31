@@ -1,4 +1,7 @@
-
+body{
+   margin: 0;
+   padding: 0;
+}
 .divblanding{
     margin-left: 50px;
 }
@@ -23,7 +26,7 @@
   border-radius: 40px
 }
 .width-50px{
-    height: 100px;
+    height: 70px;
 }
 
 .hovered:hover{
@@ -53,4 +56,154 @@
     display: grid;
     grid-template-columns: 20px 20px 20px;
     margin-top: 10px;
+}
+.header{
+    font-size: 35px;
+}
+.container-2{
+    width: 40%;
+    margin-left: 30%;
+    border: 2px solid white;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.google{
+    margin-left: 16%;
+    margin-top: 25px;
+    background-color: rgb(211, 201, 201);
+    border-radius: 70px;
+    text-align: center;
+   padding-top: 2%;
+   padding-bottom: 2%;
+   padding-left: 1%;
+   width: 70%;
+   font-weight: 600;
+   margin-bottom: 30px;
+
+
+}
+.google:hover{
+    background-color: #66bb6a;
+}
+
+.signup-btn{
+    width: 70%;
+    border-radius: 70px;
+    background-color: rgb(232, 232, 232);
+    border: none;
+    padding: 4% 0%;
+    font-weight: 700;
+    margin-top: 40px;
+}
+.signup-btn:hover{
+    background-color: #66bb6a;
+    color: white;
+}
+.divider-1 {
+    display: flex;
+    align-items: center; /* vertically center the text */
+    text-align: center;
+    margin: 0px 41px;
+    margin-bottom: 50px;
+  }
+  
+  .divider-1 hr {
+    flex-grow: 1; /* make the hr fill the remaining space */
+    border: none;
+    border-top: 1px solid #ccc; /* add a horizontal line */}
+
+/* aboutus */
+/* .headerr{
+    background-image: url('../imgs/photo_2023-03-17_10-11-29.jpg');
+    height: 200px;
+    width: 100%;
+    margin-top: 0%;
+    background-repeat: no-repeat;
+  background-position: right top;
+} */
+/* section{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 50px;
+}
+section i{
+    padding-left: 40px;
+}
+section .content{
+    padding-left: 20px;
+    padding-top: 15px;
+    z-index: 1;
+    position: absolute;
+}
+
+section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('../imgs/photo_2023-03-17_10-11-29.jpg') no-repeat center fixed;
+    background-size: 1000px 600px;
+    opacity: 0.9;
+    border-radius: 0 0 50% 50%/ 0 0 100% 100%;
+    transform: scaleX(2.5);
+}
+section::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:  black;
+    opacity: 0.7;
+    border-radius: 0 0 50% 50%/ 0 0 100% 100%;
+    transform: scaleX(2.5);
+}
+hr.solid {
+    z-index: 1;
+    position: absolute;
+    border-top: 1px solid #0f0f0f;
+    margin-top: 50px;
+    width: 100%;
+  } */
+
+.about-flex{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 50px;
+    text-align: center;
+}
+.about-flex div p{
+ font-weight: 700;
+ color: #5e5e5e;
+}
+.about-flex div h5{
+    font-weight: 700;
+}
+
+.contactflex{
+    display: flex;
+    text-align: left;
+}
+
+.contactusform{
+    border: 3px solid rgb(239, 237, 237);
+    padding: 0px 20px;
+    margin-left: 0px;
+    margin-right: px;
+    width: 500PX;
+}
+
+.contactusform h1{
+  font-size: 30px;
+  font-weight: 700;
 }

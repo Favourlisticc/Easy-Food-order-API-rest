@@ -44,8 +44,10 @@ async (req, email, password, done) => {
 
     // Check if a user already exists with the given email address
     const existingUser = await User.findOne({ email });
+    const existingUserGoogle = await googleUser.findOne({ email })
 
-    if (existingUser) {
+    if (existingUser || existingUserGoogle) {
+      console.log("A user with this email address already exists")
       return done(null, false, { message: 'A user with this email address already exists' });
     }
 
@@ -77,7 +79,8 @@ passport.use('login', new LocalStrategy({
               done(new Error ("Your credentials are not valid"))
           }
           const userDB = await User.findOne({ email })
-          if(!userDB) throw new Error('User not found')
+          const existingUserGoogle = await googleUser.findOne({ email })
+          if(!userDB || !existingUserGoogle) throw new Error('User not found')
           const isValid = comparePassword(password, userDB.password)
           if(isValid) {
               console.log('Authenticated Successfully');
@@ -95,8 +98,8 @@ passport.use('login', new LocalStrategy({
 
 // passport google strategy using passport-google-auth20
 passport.use('google'  ,new GoogleStrategy({
-  clientID: '*****',
-  clientSecret: '****',
+  clientID: '******',
+  clientSecret: '*****',
   callbackURL: "http://localhost:3002/auth/google/callback"
 },
 async(accessToken, refreshToken, profile, done) => {
