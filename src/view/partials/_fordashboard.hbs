@@ -1,0 +1,41 @@
+<div class="navbar-fixed " style="height:20px">
+      <nav style="background-color: rgb(226, 219, 219);">
+       <div class=" white " style="height: 0px;">
+
+        {{#if user}}
+            <a href="/" class="brand-logo  divblanding black-text font-bold bold navbar-fixed">HI {{ user.username }}</a>
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <ul class="hide-on-med-and-down landing-ul">
+            <li><a href="/sale" class="black-text font-bold bold hovered">Category</a></li>
+            <li><a href="" class="black-text font-bold bold hovered">Available</a></li>
+            <li><a href="/about-us" class="black-text font-bold bold hovered">About-Us</a></li>
+            <li><a href="/contactus" class="black-text font-bold bold hovered">Contact-US</a></li>
+
+      </ul>
+      </div>
+      <div class="dashboardpartial">
+            <!-- carting -->
+        <a href="/cart"><i class="material-icons prefix dropdownnor" style="font-size: 30px;">shopping_cart</i></a>
+
+        <!-- Dropdown Trigger -->
+      <a class="dropdown-trigger " href="" data-target="dropdown1" ><i class="material-icons right dropdownnor" style="font-size: 30px;" >account_circle</i></a>
+
+
+      </div>
+      <ul id="dropdown1" class="dropdown-content dropdown-content-2ND">
+        <li> {{ user.username}} </li>
+        <li> {{ user.email }} </li>
+        <li><a href="/dashboard/profile" style="text-align: center;">Profile</a></li>
+        <li><a href="/logout"  style="text-align: center;">Logout</a></li>
+        <li class="divider"></li>
+        <li><a href="#!"  style="text-align: center;">three</a></li>
+      </ul>
+      {{/if}}
+
+    </div>
+  </nav>
+  </div>
+
+  <!-- Dropdown Structure -->

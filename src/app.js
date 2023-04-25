@@ -8,8 +8,10 @@ const mongoStore = require('connect-mongo')
 const stratrgy = require('./strategy/signup')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
+const mime = require('mime');
+const account = require('./routes/account')
 
-require('./database/schemas/signin')
+require('./database/schemas/user')
 require('./database/mongodb')
 
 const app = express()
@@ -17,6 +19,8 @@ const app = express()
 //importing routes
 const index = require('./routes/index')
 const auth = require('./routes/auth')
+const user = require('./routes/user')
+const admin = require('./routes/admin')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,7 +32,7 @@ app.use(session(
   resave: false,
   saveUninitialized: false,
   store : mongoStore.create({
-    mongoUrl: '****'
+    mongoUrl: '**'
   })
 }
 ))
@@ -42,6 +46,11 @@ app.use(flash());
 
 //Static folder
 app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('*.js', (req, res, next) => {
+  res.type('application/javascript');
+  next();
+});
 
 //logging
 if(process.env.NODE_ENV === 'development'){
@@ -63,6 +72,10 @@ app.set('views', viewspath)
 //calling routes so we can use it
 app.use('/', index)
 app.use('/auth', auth)
+app.use('/user', user)
+app.use('/admin', user)
+app.use('/dashboard', account)
+
 
 
 //PORT

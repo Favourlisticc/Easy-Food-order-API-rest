@@ -10,7 +10,6 @@ body{
 
 }
 .landing-ul > li:hover{
-    border-bottom: 4px orange double     !important;
     background:none !important;
 }
 .landing-ul > div {
@@ -30,7 +29,7 @@ body{
 }
 
 .hovered:hover{
-    border-bottom: 5px solid orange;
+    border-bottom: 5px solid rgb(12, 12, 12);
     background-color: inherit;
 }
 .landingimg{
@@ -206,4 +205,26 @@ hr.solid {
 .contactusform h1{
   font-size: 30px;
   font-weight: 700;
+}
+.dashboardpartial{
+    display: flex;
+    text-align: center;
+    line-height: 0px;
+    padding-left: 10px;
+    justify-content: space-around;
+
+}
+.dropdownnor{
+    color: black;
+
+    margin-left: 50px;
+}
+.dropdownnor:active{
+    color: #66bb6a;
+}
+.dropdownnor:hover{
+    color: #66bb6a;
+}
+.dropdown-content-2ND{
+    text-align: center;
 }

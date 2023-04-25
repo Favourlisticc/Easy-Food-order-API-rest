@@ -1,7 +1,8 @@
 const { Router } = require('express')
 const passport = require('passport')
-const User = require('../database/schemas/signin')
+const User = require('../database/schemas/user')
 const passserialize = require('../strategy/signup')
+const Contact = require('../database/schemas/contactus');
 
 
 const router = Router();
@@ -27,14 +28,33 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
     res.redirect('/dashboard')
 })
 
-// router.get('/discord', passport.authenticate('discord'), (req, res) =>{
-//     res.send(200)
-// })
+//
 
-// router.get('/discord/redirect', passport.authenticate('discord'), (req, res) =>{
-//     res.send(200)
-// })
+router.post('/contactus', (req, res) => {
+  const fullname = req.body.fullname;
+  const email = req.body.email;
+  const subject = req.body.subject;
+  const body = req.body.body;
 
-// module.exports = router;
+
+  const newContact = new Contact({
+    fullname: fullname,
+    email: email,
+    subject: subject,
+    body: body
+  });
+
+  newContact.save()
+    .then(() => {
+        res.send(`
+        <h1>Thank You!</h1>
+        <p>Thanks for contacting us, ${fullname}! We'll get back to you at ${email} shortly.</p>
+      `);
+    })
+    .catch((err) => {
+      console.error(err);
+      alert("Details Needed")
+    });
+});
 
 module.exports = router
