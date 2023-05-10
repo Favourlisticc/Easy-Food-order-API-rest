@@ -1,19 +1,7 @@
 <div class="container-2">
-  <h1 class="header center black-text">  <span> Sign up to</span> F <span class="green-text center">OO</span> D</h1>
-  <p style="text-align: center;" class="grey-text"  >Got an account already? <a href="login" class="green-text lighten-4" >Log in</a>   </p>
-  <div>
-    <div class="">
-    <div class="google">
-        <a href="/auth/google" class="black-text" style="padding-right: 30px;">
-         <i class="fab fa-google left  red-text" style="padding-top: 0.5%; font-size: 150%"></i> Log in with google
-        </a>
-    </div>
-    <div class="divider-1" style="text-align: center;">
-      <hr>
-     <p style="margin: 0px 5%;"  > OR CREATE ACCOUNT</p>
-      <hr>
-    </div>
-  </div>
+    <h3 style="text-align: center;"></span> F <span class="green-text lighten-1 center">OO</span> D</h3>
+    <h5>Sign Up</h5>
+
     <form action="/auth/signup" method="POST" style="margin-left: 40px; margin-right: 40px">
 
         <div class="input-field col s12">
@@ -36,15 +24,23 @@
           <label for="email">Email</label>
         </div>
 
-        <div class="input-field col s12">
+        {{!-- <div class="input-field col s12">
           <i class="material-icons prefix">email</i>
           <input id="username" name="username" type="text" class="validate">
           <label for="username">username</label>
-        </div>
+        </div> --}}
+
+        {{!-- <div class="input-field col s12">
+          <i class="material-icons prefix">image</i>
+          <input id="image" name="image" type="file" class="validate">
+        </div> --}}
 
         <div class="input-field col s12">
           <i class="material-icons prefix">password</i>
-          <input id="password" type="password"  name="password" class="validate">
+          <input id="password" type="password"  name="password" class="validate"
+           {{!-- pattern="^(?=. */d) (?=. *[a-z]) (?=. *[A-Z]) (?=. *[a-zA-Z]). {8,}$"
+           minlength="5" maxlength="8" --}}
+          >
           <label for="password">Password</label>
         </div>
 
@@ -52,6 +48,19 @@
             <input type="submit" value="SIGNUP" class="signup-btn">
         </div>
     </form>
-  </div>
+
+    <div class="">
+      <div class="divider-1" style="text-align: center;">
+      <hr>
+     <p style="margin: 0px 5%;"  >OR</p>
+      <hr>
+    </div>
+    <div class="google">
+        <a href="/auth/google" class="btn red darken-1 google">
+         <i class="fab fa-google left"></i> Log in with google
+        </a>
+    </div>
+  <p style="text-align: center;" class="grey-text"  >Got an account already? <a href="login" class="green-text lighten-4" >Log in</a>   </p>
+
 
 </div>

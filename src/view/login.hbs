@@ -1,19 +1,7 @@
 <div class="container-2">
-  <h1 class="header center black-text">  <span> Login to</span> F <span class="green-text center">OO</span> D</h1>
-  <p style="text-align: center;" class="grey-text"  >Not a user yet? <a href="signup" class="green-text lighten-4" >signup</a>   </p>
-  <div>
-    <div class="">
-    <div class="google">
-        <a href="/auth/google" class="black-text" style="padding-right: 30px;">
-         <i class="fab fa-google left  red-text" style="padding-top: 0.5%; font-size: 150%"></i> Log in with google
-        </a>
-    </div>
-    <div class="divider-1" style="text-align: center;">
-      <hr>
-     <p style="margin: 0px 5%;"  >LOGIN</p>
-      <hr>
-    </div>
-  </div>
+  <h3 style="text-align: center;"></span> F <span class="green-text lighten-1 center">OO</span> D</h3>
+  <h6 style="text-align: center;">Welcome!</h6>
+
     <form action="/auth/login" method="POST" style="margin-left: 40px; margin-right: 40px">
 
         <div class="input-field col s12">
@@ -29,9 +17,25 @@
         </div>
 
        <div class="row center">
-            <input type="submit" value="login" class="signup-btn">
+            <input type="submit" value="Login" class="signup-btn">
         </div>
     </form>
+    <div>
+  <p style="text-align: center;" class="grey-text"  >Don't have an account? <a href="signup" class="green-text lighten-4" >Register</a>   </p>
+
+    <div class="">
+      <div class="divider-1" style="text-align: center;">
+      <hr>
+     <p style="margin: 0px 5%;"  >OR</p>
+      <hr>
+    </div>
+    <div class="google">
+        <a href="/auth/google" class="btn red darken-1 google">
+         <i class="fab fa-google left"></i> Log in with google
+        </a>
+    </div>
+
+  </div>
   </div>
 
 </div>

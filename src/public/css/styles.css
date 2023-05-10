@@ -1,6 +1,7 @@
 body{
    margin: 0;
    padding: 0;
+   background-color: #eff3ef;
 }
 .divblanding{
     margin-left: 50px;
@@ -60,46 +61,65 @@ body{
     font-size: 35px;
 }
 .container-2{
-    width: 40%;
-    margin-left: 30%;
-    border: 2px solid white;
-    background-color: white;
-    margin-top: 20px;
+   width: 35%;
+   margin-left: 420px;
+   border: 1px solid #f6f8f3;
+   margin-top: 50px;
+   border-radius: 30px;
+   background-color: #f5f8f5;
+   font-family: 'Comme', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
+padding: 0px 20px;
+
+}
+.container-2 > h6{
     margin-bottom: 50px;
-    border-radius: 20px;
-    padding-left: 3%;
-    padding-right: 3%;
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 19px;
+}
+.container-2 > h3{
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 40px;
+    color: #363636;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.container-2 > h5{
+    font-weight: 600;
+    font-size: 25px;
+    color: #363636;
+    text-align: center;
+    margin-bottom: 50px;
 }
 .google{
-    margin-left: 16%;
-    margin-top: 25px;
-    background-color: rgb(211, 201, 201);
-    border-radius: 70px;
-    text-align: center;
-   padding-top: 2%;
-   padding-bottom: 2%;
-   padding-left: 1%;
-   width: 70%;
-   font-weight: 600;
-   margin-bottom: 30px;
-
-
+    margin-left: 35px;
+    margin-bottom: 20px;
+    width: 270px;
+    border-radius: 50px;
 }
-.google:hover{
-    background-color: #66bb6a;
-}
-
 .signup-btn{
-    width: 70%;
+    width: 100px;
     border-radius: 70px;
-    background-color: rgb(232, 232, 232);
+    background-color: #64af67;
     border: none;
-    padding: 4% 0%;
-    font-weight: 700;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 120px;
+    padding-right: 160px;
+
+    font-weight: 600;
     margin-top: 40px;
+    text-align: center;
+    color: white;
+    margin-left: 10px;
 }
 .signup-btn:hover{
-    background-color: #66bb6a;
+    background-color: #a3dda6;
     color: white;
 }
 .divider-1 {
@@ -107,9 +127,9 @@ body{
     align-items: center; /* vertically center the text */
     text-align: center;
     margin: 0px 41px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
-  
+
   .divider-1 hr {
     flex-grow: 1; /* make the hr fill the remaining space */
     border: none;
@@ -228,3 +248,236 @@ hr.solid {
 .dropdown-content-2ND{
     text-align: center;
 }
+.profile-container{
+    border: 1px solid rgb(255, 255, 255);
+    width: 1000px;
+    height: 120px;
+    margin-top: 20px;
+    background-color: white;
+    margin-left: 220px;
+    border-radius: 10px;
+    display: flex;
+    font-family: 'Comme', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+
+}
+.profile-img{
+  margin: 15px ;
+  border-radius: 50px;
+}
+.after-profile-container{
+  margin-left: 30px;
+  margin-top: 17px;
+}
+.right-line-divider{
+  border-right: 3px solid rgb(213, 209, 209);
+  margin-left: 100px;
+
+}
+.adminaccessdropdown{
+
+  min-width: 150px;
+  padding: 10px 10px;
+  color: white;
+  border-radius: 5px;
+}
+.adminaccessdropdown > a{
+  color: black;
+}
+.adminaccessdropdown:hover{
+  background-color: #e8eded;
+
+}
+.adminaccessdropdown > a:hover{
+  color: #538d56;
+  text-decoration: underline;
+
+}
+.editprofile{
+  border: 1px solid #388e3c;
+  background-color: #388e3c;
+  color: white;
+  text-align: center;
+  border-radius: 50px;
+  width: 200px;
+  height: 50px;
+  padding: 10px 20px;
+  margin-top: 50px;
+  margin-left: 60px;
+
+}
+.editprofile:hover{
+  background-color: #41a748;
+}
+.footerr {
+
+    margin-top: 100px;
+  }
+  .for-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    background-color: rgb(251, 248, 248);
+    margin-left: 200px;
+
+
+  }
+
+  .product-container{
+     border: 1px solid grey;
+     background-color: rgb(226, 219, 219);
+     border-radius: 10px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 0px;
+    height: 220px;
+    padding: 20px;
+  }
+
+
+  .product-container> h2{
+    font-size: 20px;
+
+  }
+  .add-product-container{
+    margin: 70px;
+    border: 1px solid rgb(226, 219, 219);
+    background-color: rgb(226, 219, 219);
+    padding: 50px;
+    border-radius: 20px;
+
+  }
+  .add-product-container > h3{
+    text-align: center;
+  }
+  .category-dropdown{
+    border: 1px solid rgb(168, 165, 165);
+    background-color: rgb(168, 165, 165);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    font-family: 'Comme', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+
+
+  }
+  .category-dropdown > a{
+    border: 1px solid rgb(229, 228, 228);
+    background-color: rgb(229, 228, 228);
+    padding: 10px 30px;
+    color: black;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+  .category-dropdown > a:hover{
+    background-color: rgb(250, 249, 249);
+    color: #388e3c;
+  }
+  .category-dropdown >div>a{
+    color: black;
+  }
+  .category-image{
+    width: 50px;
+    border-radius: 5px;
+  }
+
+  /* Style the sidenavbar */
+.sidenavv {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #388e3c;
+    overflow-x: hidden;
+
+  }
+
+  .sidenavv > h3{
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: white;
+
+  }
+
+  /* Style the links inside the sidenavbar */
+  .sidenavv a {
+    display: block;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    text-decoration: none;
+    font-size: 17px;
+
+    color: white;
+    font-family: 'Comme', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+  }
+  .sidenavv > a:hover{
+    background-color: rgb(241, 238, 238);
+    color: #388e3c;
+  }
+
+  .iconn{
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  /* Style the main content */
+  .mainn {
+    margin-left: 200px; /* Same as the width of the sidenavbar */
+    background-color: rgb(223, 220, 220);
+  }
+
+  /* Style the page title */
+  .mainn h1 {
+    font-size: 36px;
+    margin-top: 0;
+  }
+  .aftermainn{
+    background-color: white;
+
+    height: 70px;
+    margin-bottom: 10px;
+
+    display: flex;
+  }
+  .aftermainn > img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: black;
+    margin-left: 600px;
+    margin-top: 15px;
+    margin-right: 10px;
+  }
+
+  .aftermainn > p >span{
+    color: #707171;
+  }
+  .dashboardlogo{
+    color: rgb(52, 51, 51);
+    font-family: 'Comme', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 30px;
+    margin-top: 20px;
+  }
+
+
+  
+  

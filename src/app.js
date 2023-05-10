@@ -9,9 +9,8 @@ const stratrgy = require('./strategy/signup')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const mime = require('mime');
-const account = require('./routes/account')
 
-require('./database/schemas/user')
+require('./database/models/user')
 require('./database/mongodb')
 
 const app = express()
@@ -21,6 +20,10 @@ const index = require('./routes/index')
 const auth = require('./routes/auth')
 const user = require('./routes/user')
 const admin = require('./routes/admin')
+const account = require('./routes/account')
+const product = require('./routes/adminproduct')
+const category = require('./routes/category')
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,11 +31,11 @@ app.use(express.json());
 // set up session cookies
 app.use(session(
 {
-  secret: 'AVJHJHGFYTFYFUYFKIJOYOLMLSZKK',
+  secret: '****',
   resave: false,
   saveUninitialized: false,
   store : mongoStore.create({
-    mongoUrl: '**'
+    mongoUrl: '****'
   })
 }
 ))
@@ -73,8 +76,38 @@ app.set('views', viewspath)
 app.use('/', index)
 app.use('/auth', auth)
 app.use('/user', user)
-app.use('/admin', user)
+app.use('/admin', admin)
 app.use('/dashboard', account)
+app.use('/admin/dashboard/product', product)
+app.use('/admin/dashboard/category', category)
+
+
+// const storage = multer.diskStorage({
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + '-' + file.originalname);
+//   }
+// });
+// const upload = multer({ storage: storage });
+
+// cloudinary.config({
+//   cloud_name: "dwe8h5aqc",
+//   api_key: "478185315828577",
+//   api_secret: "pViJOMPLiMdwTWNplLeAfLYx9eM"
+// });
+
+// app.post('/upload', upload.single('image'), (req, res) => {
+//   // Use cloudinary to upload the image
+//   cloudinary.uploader.upload(req.file.path, (error, result) => {
+//     if (error) {
+//       console.error(error);
+//       return res.redirect('/error');
+//     }
+//     // Save the result to your database or do something else with it
+//     console.log(result);
+//     res.send('sucessful');
+//   });
+// });
+
 
 
 

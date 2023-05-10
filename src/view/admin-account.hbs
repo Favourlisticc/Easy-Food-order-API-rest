@@ -1,0 +1,29 @@
+<div >
+  <div class="profile-container">
+    {{#if user}}
+
+
+      <label for="" class="black-text">FirstName</label>
+      <input type="text" value="{{ user.firstName}} {{ user.lastName}} " disabled class="black-text">
+
+      <label for="" class="black-text">Email</label>
+      <input type="text" value="{{ user.email}}" disabled class="black-text">
+
+
+      <label for="" class="black-text">Full name</label>
+      <input type="text" value="{{ user.firstName}}" disabled class="black-text">
+
+      <div style="margin-top: 40px;">
+        <a href="/dashboard"   class="waves-effect waves-light btn-small" style="margin-right: 10px;"><i class="material-icons left">arrow_back</i>Go back Admin dashboard </a>
+        <a href="/dashboard/profile/edit" class="waves-effect waves-light btn-small" style="margin-top: 10px;"><i class="material-icons left">edit</i>Edit</a>
+
+      </div>
+      <div>
+        <a href="/dashboard" class="waves-effect waves-light btn-small" style="margin-top: 30px;"><i class="material-icons left">arrow_back</i>Go Back User dashboard</a>
+
+      </div>
+
+
+    {{/if}}
+  </div>
+</div>

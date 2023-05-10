@@ -1,10 +1,41 @@
-<form id="search-form">
+{{!-- <div style="margin-bottom: 40%;">
+  <form id="search-form">
       <label for="user-id-input">User ID:</label>
       <input type="text" id="user-id-input" name="user-id">
       <button type="submit">Search</button>
     </form>
     <div id="dashboard" style="width: 100%; height: 300px" >
-      <!-- The search results will be displayed here -->
+      <h1>Our Products</h1>
+    {{#each products}}
+      <div>
+        <h2>{{name}}</h2>
+        <p>{{description}}</p>
+        <p>${{price}}</p>
+        <img src="{{image}}" alt="{{name}}">
+      </div>
+    {{/each}}
   </div>
+</div> --}}
+<div class="category-dropdown">
+      <a href="">Avaliable</a>
 
- 
+      <a href="">Raw Meats </a>
+      <a href="">Cakes and chocolates </a>
+      <a href="">Drinks and Water </a>
+      <a href="">Chickens </a>
+
+
+
+    </div>
+<div class="for-product">
+  {{#each products}}
+      <div class="product-container">
+        <img src="{{image}}" alt="{{name}}">
+        <h2>{{name}}</h2>
+        <p>{{description}}</p>
+        <p>${{price}}</p>
+
+      </div>
+    {{/each}}
+</div>
+

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Bring in Models & Helpers
-const User = require('../database/schemas/user')
+const User = require('../database/models/user')
 const { ensureUnauthUser, enSuremainUser} = require('../middleware/auth')
 
 

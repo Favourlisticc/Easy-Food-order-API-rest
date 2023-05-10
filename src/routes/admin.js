@@ -1,9 +1,8 @@
 // Require Router from express
 const { Router } = require('express');
 const router = Router();
-const users = require('../database/schemas/user')
-const User = require('../database/schemas/user');
-
+const User = require('../database/models/user');
+const products = require('../controllers/products')
 
 // Define middleware to check for admin access
 const requireAdmin = (req, res, next) => {
@@ -14,17 +13,36 @@ const requireAdmin = (req, res, next) => {
   next();
 }
 
-User.grantAdminAccess('6447b623c027284deb91f1c9')
+User.grantAdminAccess('645796808e1de4ec4ad8fc61')
   .then(user => {
     console.log(`User ${user.firstName} granted admin access.`);
   })
   .catch(err => {
     console.log(err);
   });
+
+
 // Define routes that require admin access
-router.get('/admin/dashboard', requireAdmin, (req, res) => {
+router.get('/dashboard', async (req, res) => {
   // Render the admin dashboard
-  res.render('admin/dashboard');
+  try {
+    const user = await User.findOne({ _id: req.user._id }).lean()
+        res.render('admindashboard', {
+          user, req: req,
+          firstName: req.user.firstName,
+          layout: 'admin',
+          products
+        });
+
+}catch(err){
+  console.log(err)
+}
+});
+
+router.get('/account', async (req, res) => {
+  // Retrieve user data from database and render the account page with user data and a flag indicating whether the user is logged in or not
+  const user = await User.findOne({_id: req.user._id}).lean();
+  res.render('admin-account', { user, isLoggedIn: req.isAuthenticated(), req, layout: 'admin'});
 });
 
 router.get('/admin/users', requireAdmin, (req, res) => {

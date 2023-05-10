@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const JwtStrategy = require('passport-jwt').Strategy;
-const User = require('../database/schemas/user');
+const User = require('../database/models/user');
 const { hashPassword, comparePassword} = require('../utils/hashcomp')
 const GoogleStrategy = require('passport-google-oauth20').Strategy
 
@@ -12,7 +12,7 @@ passport.serializeUser((user, done) => {
   console.log(user)
   done(null, user.id);
 });
-  
+
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findById(id);
@@ -29,47 +29,42 @@ passport.deserializeUser(async (id, done) => {
 
 // passport signup strategy using local-passport strategy
 passport.use('signup', new LocalStrategy({
-  usernameField: 'email' + 'username',
+  usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
 },
-async (req, email, password, username, done) => {
-  console.log(email)
+async (req, email, password, done) => {
+   console.log(email)
   console.log(password)
-  console.log(username)
+  // console.log(username)
   try {
     if (!email || !password) {
-      return done(null, false, { message: 'Missing email or password' });
+      return done(null, false, { message: 'Missing email/username or password' });
     }
     const hashPasswor = await hashPassword(password);
 
     // Check if a user already exists with the given email address
-    const existingUser = await User.findOne({ email });
-    const existingUserusername= await User.findOne({ username })
+    const existingUser = await User.findOne({ email});
+
 
 
     if (existingUser) {
-      console.log("A user with this email address already exists")
-      return done(null, false, { message: 'A user with this email address already exists' });
-    }
-    if (existingUserusername) {
-      console.log("A user with this username already exists")
-      return done(null, false, { message: 'A user with this username already exists' });
+      console.log(`A user with this this already exists`)
+      return done(null, false, { message: 'A user with this email/username already exists' });
     }
 
     // Create a new user object with the provided email and password
     const newUser = await User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      username: req.body.username,
+      // username: req.body.username,
       email: req.body.email,
-      password: hashPasswor
+      password: hashPasswor,
+      // image: req.body.image
     });
-    console.log('Authenticated Successfully');
-    done(null, userDB);
 
-    // Return the new user
-    return done(null, newUser);
+      console.log('User created successfully');
+      done(null, newUser);
   } catch (err) {
     console.log(err)
   }
@@ -107,9 +102,9 @@ passport.use('login', new LocalStrategy({
 
 // passport google strategy using passport-google-auth20
 passport.use('google', new GoogleStrategy({
-  clientID: '***',
-  clientSecret: '***',
-  callbackURL: "****"
+  clientID: '****',
+  clientSecret: '****',
+  callbackURL: "http://localhost:3002/auth/google/callback"
 },
 async(accessToken, refreshToken, profile, done) => {
   console.log(profile)
@@ -121,6 +116,7 @@ async(accessToken, refreshToken, profile, done) => {
       lastName: profile.name.givenName,
       email: profile.emails[0].value,
       image: profile.photos[0].value,
+      phoneNumber: profile._json.phone_number,
 
   }
 

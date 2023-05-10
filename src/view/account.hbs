@@ -1,8 +1,69 @@
 <div >
-  <div class="container">
+  {{!-- <div class="profile-container">
     {{#if user}}
-      <label for="">Full name</label>
-      <input type="text" value="{{ user.firstName}}" disabled>
-    {{/if}}
-  </div>
+
+
+      <label for="" class="black-text">FirstName</label>
+      <input type="text" value="{{ user.firstName}} {{ user.lastName}} " disabled class="black-text">
+
+      <label for="" class="black-text">Email</label>
+      <input type="text" value="{{ user.email}}" disabled class="black-text">
+
+
+      <label for="" class="black-text">Full name</label>
+      <input type="text" value="{{ user.firstName}}" disabled class="black-text">
+
+      <div style="margin-top: 40px;">
+        <a href="/dashboard"   class="waves-effect waves-light btn-small" style="margin-right: 55px;"><i class="material-icons left">arrow_back</i>Go back Home</a>
+        <a href="/dashboard/profile/edit" class="waves-effect waves-light btn-small"><i class="material-icons left">edit</i>Edit</a>
+
+      </div>
+       {{#if user.isAdmin}}
+        {{#unless adminDashboardPage}}
+        <div style="margin-top: 40px; margin-left: 30px">
+        <a href="/admin/dashboard" class="waves-effect waves-light btn-small"><i class="material-icons left">account_box</i>Admin Control Center</a>
+        {{/unless}}
+        </div>
+
+      {{/if}}
+
+
+    {{/if}} --}}
+
+    <div class="profile-container">
+      {{#if user}}
+
+           <img  class="profile-img" src="{{user.image}}" alt="">
+
+             <div class="">
+              <h6>Mr {{user.lastName}} {{user.firstName}}</h6>
+              <p style="color: #949594">Balance : <span style="color: #15951b">$0.00</span>  </p>
+
+            {{#if user.isAdmin}}
+             <p style="color: #949594">Role : <span class="dropdown-trigger" data-target='dropdown2' style="color: #135416">Admin</span></p>
+            {{else}}
+              <p style="color: #949594">Role : <span style="color: blue">User</span></p>
+            {{/if}}
+             </div>
+
+            <p class="right-line-divider"></p>
+
+            <div class="after-profile-container">
+              <p style="color: #949594">EMAIL :  <span style="color: black;">{{user.email}}</span></p>
+              <p style="color: #949594">Phone Number :  <span style="color: black;">{{user.phoneNumber}}</span></p>
+            </div>
+
+            <p class="right-line-divider"></p>
+
+            <div style="padding-top: 50px;">
+            <a href="/profile" class="editprofile">EDIT PROFILE INFO</a>
+
+            </div>
+      {{/if}}
+    </div>
 </div>
+
+<!-- Dropdown Structure -->
+  <div id='dropdown2' class='dropdown-content adminaccessdropdown'>
+    <a style="width: 300px;" href="/admin/dashboard/">Admin Dashboard</a>
+  </div>

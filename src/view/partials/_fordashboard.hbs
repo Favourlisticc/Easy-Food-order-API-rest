@@ -1,41 +1,81 @@
-<div class="navbar-fixed " style="height:20px">
-      <nav style="background-color: rgb(226, 219, 219);">
-       <div class=" white " style="height: 0px;">
+<div class="sidenavv">
+      <h3 style="text-align: center;"></span> F <span class="green-text lighten-1 center">OO</span> D</h3>
 
-        {{#if user}}
-            <a href="/" class="brand-logo  divblanding black-text font-bold bold navbar-fixed">HI {{ user.username }}</a>
 
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      {{!--   {{#if user}}
+
 
         <ul class="hide-on-med-and-down landing-ul">
-            <li><a href="/sale" class="black-text font-bold bold hovered">Category</a></li>
-            <li><a href="" class="black-text font-bold bold hovered">Available</a></li>
-            <li><a href="/about-us" class="black-text font-bold bold hovered">About-Us</a></li>
-            <li><a href="/contactus" class="black-text font-bold bold hovered">Contact-US</a></li>
+            <li></li>
+
 
       </ul>
       </div>
       <div class="dashboardpartial">
             <!-- carting -->
-        <a href="/cart"><i class="material-icons prefix dropdownnor" style="font-size: 30px;">shopping_cart</i></a>
 
         <!-- Dropdown Trigger -->
-      <a class="dropdown-trigger " href="" data-target="dropdown1" ><i class="material-icons right dropdownnor" style="font-size: 30px;" >account_circle</i></a>
 
 
       </div>
-      <ul id="dropdown1" class="dropdown-content dropdown-content-2ND">
-        <li> {{ user.username}} </li>
+      {{!-- <ul id="dropdown1" class="dropdown-content dropdown-content-2ND">
+        <li> {{ user.firstName}} </li>
         <li> {{ user.email }} </li>
         <li><a href="/dashboard/profile" style="text-align: center;">Profile</a></li>
-        <li><a href="/logout"  style="text-align: center;">Logout</a></li>
         <li class="divider"></li>
         <li><a href="#!"  style="text-align: center;">three</a></li>
       </ul>
-      {{/if}}
 
+
+    </div> --}}
+
+  {{!-- <ul id='dropdown' class='dropdown-content category-dropdown' style="display: none; width: 0px; left: 0px;top: 64px; height: 0px; transform-origin: 0px 0px;opacity: 1;transform: 0px;">
+    <div>
+      <a href="/admin/dashboard/category/avaliable">Avaliable</a>
     </div>
-  </nav>
-  </div>
+    <li class="divider"></li>
+
+  </ul> --}}
 
   <!-- Dropdown Structure -->
+  {{#if user}}
+
+    <a href="/dashboard" class="font-bold bold" > <i class="fa-solid fa-house fa-fade iconn"></i></i></i>  Dashboard</a>
+
+    <a href="/order" class="font-bold bold"> <i class="fas fa-light fa-basket-shopping iconn"></i>Food Order</a>
+
+    <a href="/Deposit" class="font-bold bold "> <i class="fas fa-solid fa-clock-rotate-left iconn"></i> Order History</a>
+
+    <a href="/Withdraw" class="font-bold bold"> <i class="fas fa-solid fa-money-check-dollar iconn"></i>  payment</a>
+
+    <a href="" class="font-bold bold dropdown-trigger" data-target='dropdown1' style="margin-bottom: 30px;"> <i class="fas fa-duotone fa-gear iconn"></i> Settings <i class="fas fa-duotone fa-caret-down"></i></a>
+
+    <hr>
+
+  <a href="/logout" class="font-bold bold"><i class="fas fa-solid fa-right-from-bracket iconn"></i> Logout</a>
+
+
+
+  {{/if}}
+</div>
+
+<div class="mainn">
+
+   {{#if user}}
+
+      <div class="aftermainn">
+        <a href="/" class="dashboardlogo">HI Welcome Back</a>
+        <img src="{{ user.image}}" alt="">
+
+        <p> {{ user.lastName}} {{ user.firstName }}<br> <span>{{ user.email}}</span></p>
+
+
+
+      </div>
+   {{/if}}
+</div>
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="/dashboard/profile">Profile</a></li>
+    <li><a href="#!">Config</a></li>
+  </ul>

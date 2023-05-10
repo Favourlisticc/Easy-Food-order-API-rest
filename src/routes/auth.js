@@ -1,25 +1,31 @@
 const { Router } = require('express')
 const passport = require('passport')
-const User = require('../database/schemas/user')
+const User = require('../database/models/user')
 const passserialize = require('../strategy/signup')
-const Contact = require('../database/schemas/contactus');
+const Contact = require('../database/models/contactus');
 
 
 const router = Router();
 
 // post req to signup auth
 router.post('/signup', passport.authenticate('signup', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/signup',
-    failureFlash: true
-}));
+  successRedirect: '/dashboard',
+  failureRedirect: '/signup',
+  failureFlash: true
+}), (req, res) => {
+  // Set authenticated user info on request object
+  req.user = req.user;
+});
 
 // post req to login auth
 router.post('/login', passport.authenticate('login', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/login',
-    failureFlash: true
-}));
+  successRedirect: '/dashboard',
+  failureRedirect: '/login',
+  failureFlash: true
+}), (req, res) => {
+  // Set authenticated user info on request object
+  req.user = req.user;
+});
 
 // get req to google-auth auth
 router.get('/google', passport.authenticate('google', {scope: ['profile', 'email']}), )

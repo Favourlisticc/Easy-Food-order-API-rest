@@ -1,0 +1,55 @@
+<div class="add-product-container">
+   <h3>Add product</h3>
+
+    <div class="row">
+    <form method="POST" action="/admin/dashboard/product/add-product"  class="col s12" enctype="multipart/form-data">
+    <div class="row">
+        <div class="input-field">
+            <input type="text" id="title" name="title">
+            <label for="title">Title</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <input type="text" id="price" name="price">
+            <label for="price">Price</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <input type="text" id="description" name="description">
+            <label for="description">Description</label>
+        </div>
+    </div>
+
+    <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose category</option>
+      <option value="1">Raw Meats</option>
+      <option value="2">Cakes and chocolates</option>
+      <option value="3">Drinks and Water</option>
+      <option value="4">Chickens</option>
+
+    </select>
+    <label>Category Select</label>
+  </div>
+
+    <div class="row">
+        <div class="">
+            <label for="image">Image</label><br>
+            <input type="file" id="image" name="image">
+        </div>
+    </div>
+
+        <div class="row">
+            <input type="submit">
+            <a href="/admin/dashboard/category/avaliable" class="btn orange">Cancel</a>
+        </div>
+    </div>
+    </form>
+
+    <p>{{msg}}</p>
+    </div>
+</div>

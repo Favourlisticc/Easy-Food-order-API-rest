@@ -1,0 +1,72 @@
+<div class="navbar-fixed " style="height:20px">
+      <nav style="background-color: rgb(226, 219, 219);">
+       <div class=" white " style="height: 0px;">
+
+        {{#if user.isAdmin}}
+            <a href="/" class="brand-logo  divblanding black-text font-bold bold navbar-fixed">HI Admin {{user.firstName}}</a>
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <ul class="hide-on-med-and-down landing-ul">
+            <li><a href="#" class="black-text font-bold bold dropdown-trigger hovered" data-target='dropdown'>Category <i class="material-icons right" style="padding-top: 5px; padding-left:0%">arrow_drop_down</i></a></li>
+            <li><a href="/admin/dashboard/product/add-product" class="black-text font-bold bold hovered active">Add-Item</a></li>
+            <li><a href="/about-us" class="black-text font-bold bold active hovered">Check Orders</a></li>
+            <li><a href="/sale" class="black-text font-bold bold active hovered">Users</a></li>
+            <li><a href="/admin/dashboard" class="black-text font-bold bold active hovered" data-target="slide-out">DashBoard</a></li>
+
+
+      </ul>
+      </div>
+      <div class="dashboardpartial">
+
+        <!-- Dropdown Trigger -->
+      <a class="dropdown-trigger " href="#!" data-target="dropdown1" ><i class="material-icons right dropdownnor" style="font-size: 30px;" >account_circle</i></a>
+
+
+      </div>
+      <ul id="dropdown1" class="dropdown-content dropdown-content-2ND">
+        <li> {{ user.firstName}} </li>
+        <li> {{ user.email }} </li>
+        <li><a href="/admin/account" style="text-align: center;">Profile</a></li>
+        <li><a href="/logout"  style="text-align: center;">Logout</a></li>
+        <li class="divider"></li>
+        <li><a href="#!"  style="text-align: center;">three</a></li>
+      </ul>
+      {{/if}}
+
+    </div>
+  </nav>
+  </div>
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+
+  <!-- Dropdown Structure -->
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown' class='dropdown-content category-dropdown' style="display: none; width: 0px; left: 0px;top: 64px; height: 0px; transform-origin: 0px 0px;opacity: 1;transform: 0px;">
+    <div>
+      <a href="/admin/dashboard/category/avaliable">Avaliable</a>
+    </div>
+    <li class="divider"></li>
+    <div>
+      <a href="">Raw Meats <img class="category-image"   src="/imgs/rawmeat.jpg" alt=""></a>
+      <a href="">Cakes and chocolates <img class="category-image"   src="/imgs/cakesandchocolate.jpg" alt="" style="margin-left: 250px;"></a>
+      <a href="">Drinks and Water <img class="category-image"   src="/imgs/drinksandwater.jpg" alt="" style="margin-left: 278px;"></a>
+      <a href="">Chickens <img class="category-image"   src="/imgs/chicken.jpg" alt="" style="margin-left: 335xpx;"></a>
+      <a href=""></a>
+
+    </div>
+  </ul>
