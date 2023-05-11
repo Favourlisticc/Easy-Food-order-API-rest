@@ -53,9 +53,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 cloudinary.config({
-  cloud_name: "****",
-  api_key: "****",
-  api_secret: "****"
+  cloud_name: "dwe8h5aqc",
+  api_key: "478185315828577",
+  api_secret: "pViJOMPLiMdwTWNplLeAfLYx9eM"
 });
 
 router.get('/add-product', async(req, res)=>{
@@ -100,11 +100,12 @@ router.post('/add-product', upload.single('image'), async(req, res) => {
           product.save();
           console.log(product)
           res.render('add-product', { user, isLoggedIn: req.isAuthenticated(), req, layout: 'admin',
-          msg: "Successfully Upload"
+          msg: "Successfully Uploaded"
     });
         } catch (err) {
           console.error(err);
-          res.status(500).json({ message: 'An error occurred while saving the product.' });
+          res.render('add-product', { user, isLoggedIn: req.isAuthenticated(), req, layout: 'admin',
+          error: "Unsuccessful Uploading"})
         }
   });
 });

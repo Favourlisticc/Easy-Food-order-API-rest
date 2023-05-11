@@ -2,7 +2,7 @@ const { Router } = require('express')
 const router = Router();
 const users = require('../database/models/user')
 const { ensureUnauthUser, enSureMainUser} = require('../middleware/auth')
-const products = require('../controllers/products')
+const listproduct = require('../database/models/products')
 
 
 // req Get for landing page
@@ -33,7 +33,7 @@ router.get('/dashboard', ensureUnauthUser, async (req, res) => {
         res.render('dashboard', {
           user, req: req,
           username: req.user.firstName,
-          products
+          listproduct
         });
 
 }catch(err){

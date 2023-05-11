@@ -1,5 +1,7 @@
 <div class="add-product-container">
    <h3>Add product</h3>
+   <h5 style="text-align: center; color: red; font-weight:600">{{error}} </h5>
+   <h5 style="text-align: center; color: green; font-weight:600">{{msg}}</h5>
 
     <div class="row">
     <form method="POST" action="/admin/dashboard/product/add-product"  class="col s12" enctype="multipart/form-data">
@@ -50,6 +52,5 @@
     </div>
     </form>
 
-    <p>{{msg}}</p>
     </div>
 </div>

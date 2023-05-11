@@ -24,6 +24,7 @@ const ProductSchema = new mongoose.Schema({
     category: {
       type: String,
       required: true,
+      default: 'Raw Meats',
       enum: ['Raw Meats', 'Cakes and chocolates', 'Drinks and Water', 'Chickens']
     },
     created: {

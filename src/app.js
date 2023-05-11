@@ -31,11 +31,11 @@ app.use(express.json());
 // set up session cookies
 app.use(session(
 {
-  secret: '****',
+  secret: 'AVJHJHGFYTFYFUYFKIJOYOLMLSZKK',
   resave: false,
   saveUninitialized: false,
   store : mongoStore.create({
-    mongoUrl: '****'
+    mongoUrl: 'mongodb+srv://favour:favoursu@cluster0.1i4m3zl.mongodb.net/foodweb'
   })
 }
 ))
