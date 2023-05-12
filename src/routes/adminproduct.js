@@ -50,12 +50,29 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + '-' + file.originalname);
   }
 });
-const upload = multer({ storage: storage });
+const upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) =>{
+    //check the file type
+    const allowedFileTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    if(!allowedFileTypes.includes(file.mimetype)) {
+      cb('Invalid File type.')
+    }
+    //check the file size
+    const maxFileSize = 10 * 1024 * 1024; //10MB
+    if(file.size > maxFileSize) {
+      cb('file size too large');
+      return;
+    }
+    // The file is valid, so return true
+    cb(true);
+  }
+});
 
 cloudinary.config({
-  cloud_name: "dwe8h5aqc",
-  api_key: "478185315828577",
-  api_secret: "pViJOMPLiMdwTWNplLeAfLYx9eM"
+  cloud_name: "///",
+  api_key: "///",
+  api_secret: "///"
 });
 
 router.get('/add-product', async(req, res)=>{
@@ -78,7 +95,7 @@ router.post('/add-product', upload.single('image'), async(req, res) => {
 
     try {
         const title = req.body.title;
-        const imageUrl = result;
+        const imageUrl = result.url;
         const price = req.body.price;
         const description = req.body.description;
         const category = req.body.category;
@@ -92,7 +109,7 @@ router.post('/add-product', upload.single('image'), async(req, res) => {
           title: title,
           price: price,
           description: description,
-          image: '/' + imageUrl.path,  //absolute path
+          image: imageUrl,  //absolute path
           category: category,
         });
       

@@ -35,7 +35,7 @@ app.use(session(
   resave: false,
   saveUninitialized: false,
   store : mongoStore.create({
-    mongoUrl: 'mongodb+srv://favour:favoursu@cluster0.1i4m3zl.mongodb.net/foodweb'
+    mongoUrl: '///b'
   })
 }
 ))

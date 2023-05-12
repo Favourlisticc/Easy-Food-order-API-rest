@@ -30,14 +30,16 @@ router.get('/signup', (req, res) =>{
 router.get('/dashboard', ensureUnauthUser, async (req, res) => {
   try {
     const user = await users.findOne({ _id: req.user._id }).lean()
+    const products = await listproduct.find().lean();
         res.render('dashboard', {
           user, req: req,
           username: req.user.firstName,
-          listproduct
+          products
         });
 
 }catch(err){
   console.log(err)
+
 }
 });
 

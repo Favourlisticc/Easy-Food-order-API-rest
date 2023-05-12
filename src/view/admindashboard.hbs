@@ -1,11 +1,18 @@
 <div class="for-product">
-  {{#each products}}
+  {{#if user}}
+
+   {{#each products}}
       <div class="product-container">
         <img src="{{image}}" alt="{{name}}">
         <h2>{{name}}</h2>
         <p>{{description}}</p>
+        <p>{{title}}</p>
         <p>${{price}}</p>
+        <p>{{created}}</p>
+
 
       </div>
     {{/each}}
+  {{/if}}
 </div>
+

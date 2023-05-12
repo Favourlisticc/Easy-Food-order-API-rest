@@ -2,7 +2,8 @@
 const { Router } = require('express');
 const router = Router();
 const User = require('../database/models/user');
-const products = require('../controllers/products')
+const listproduct = require('../database/models/products')
+
 
 // Define middleware to check for admin access
 const requireAdmin = (req, res, next) => {
@@ -27,7 +28,9 @@ router.get('/dashboard', async (req, res) => {
   // Render the admin dashboard
   try {
     const user = await User.findOne({ _id: req.user._id }).lean()
-        res.render('admindashboard', {
+    const products = await listproduct.find().lean();
+
+    res.render('admindashboard', {
           user, req: req,
           firstName: req.user.firstName,
           layout: 'admin',
