@@ -70,9 +70,9 @@ const upload = multer({
 });
 
 cloudinary.config({
-  cloud_name: "///",
-  api_key: "///",
-  api_secret: "///"
+  cloud_name: "*****",
+  api_key: "*******",
+  api_secret: "****"
 });
 
 router.get('/add-product', async(req, res)=>{

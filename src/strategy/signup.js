@@ -102,8 +102,8 @@ passport.use('login', new LocalStrategy({
 
 // passport google strategy using passport-google-auth20
 passport.use('google', new GoogleStrategy({
-  clientID: '//',
-  clientSecret: '//',
+  clientID: '****',
+  clientSecret: '******',
   callbackURL: "http://localhost:3002/auth/google/callback"
 },
 async(accessToken, refreshToken, profile, done) => {
