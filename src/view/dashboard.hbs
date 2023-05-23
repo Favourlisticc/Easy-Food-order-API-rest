@@ -16,6 +16,21 @@
     {{/each}}
   </div>
 </div> --}}
+<div class="mainn">
+
+   {{#if user}}
+
+      <div class="aftermainn">
+        <a href="/" class="dashboardlogo">HI Welcome Back</a>
+        <img src="{{ user.image}}" alt="">
+
+        <p> {{ user.lastName}} {{ user.firstName }}<br> <span>{{ user.email}}</span></p>
+
+
+
+      </div>
+   {{/if}}
+</div>
 <p>{{msg}}</p>
 <div class="category-dropdown">
       <a href="">Avaliable</a>

@@ -1,0 +1,84 @@
+
+
+<div class="editcontainer">
+<a href=""><i class="fas fa-regular fa-circle-arrow-left" style="padding-right: 10px;"></i> Go Back</a>
+
+<p class="red-text"> {{error}} </p>
+<p> {{imageerr}} </p>
+
+    <form action="/dashboard/profile/{{user._id}}?_method=PUT" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="_method" value="PUT">
+
+      <div style="border-right: 2px solid rgb(209, 206, 206);" class="edit-firstside">
+        {{!-- <h5>My account</h5> --}}
+
+       <img src="{{user.image}}" alt="">
+       <h4>{{user.firstName}} {{user.lastName}}  </h4>
+       <p style="text-align: center;">{{user.email}} </p>
+      </div>
+
+        <div class="edit-secondside" style="padding-right: 50px; margin-left: 30px">
+            <div class="input-field col s12">
+
+             <input id="firstName" name="firstName" type="text" class="validate" value="{{user.firstName}}" style="width: 270px;">
+             <label for="firstName">First Name</label>
+            </div>
+
+            <div class="input-field col s12">
+
+            <input id="lastName" name="lastName"  type="text" value="{{user.lastName}}"  class="validate">
+            <label for="lastName">Last Name</label>
+            </div>
+
+
+            <div class="input-field col s12">
+
+            <input id="email" name="email" type="email" class="validate"  value="{{user.email}}">
+            <label for="email">Email</label>
+            </div>
+
+            <div class="input-field col s12">
+            <input id="username" name="username" type="text" class="validate" value="{{user.username}}">
+            <label for="username">Username</label>
+            </div>
+
+        </div>
+
+        <div class="" style="margin-left: 100px" >
+
+            <div class="input-field col s12" style="margin-top: 70px;">
+
+            <input id="phoneNumber" name="phoneNumber" type="text" class="validate" value="{{user.phoneNumber}}" style="width: 270px;">
+            <label for="phoneNumber">Phone Number</label>
+
+            </div>
+
+            <div class="" style="margin-top: 60px;">
+            <label for="image">Profile Image</label><br>
+
+            <input id="image" name="image" type="file" class="validate" value="{{user.image}}">
+            </div>
+
+            <input type="submit" value="save" class="btn" style="margin-top: 30px;">
+        </div>
+
+
+            {{!-- <div class="input-field col s12">
+            <i class="material-icons prefix">image</i>
+            <input id="image" name="image" type="file" class="validate" {{user.lastName}}>
+            </div> --}}
+
+
+            {{!-- <div class="input-field col s12">
+            <i class="material-icons prefix">password</i>
+            <input id="password" type="password"  name="password" class="validate"
+            pattern="^(?=. */d) (?=. *[a-z]) (?=. *[A-Z]) (?=. *[a-zA-Z]). {8,}$"
+            minlength="5" maxlength="8"
+            >
+            <label for="password">Password</label>
+            </div> --}}
+
+    </form>
+
+
+</div>

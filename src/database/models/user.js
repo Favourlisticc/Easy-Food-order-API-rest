@@ -28,11 +28,11 @@ phoneNumber: {
     type: Date,
    default: Date.now()
 },
-// username: {
-//   type: String,
-//   // required: true,
-//   unique: true
-// },
+username: {
+  type: String,
+  // required: true,
+  unique: true
+},
 googleId: {
   type: String,
 },

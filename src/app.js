@@ -9,6 +9,9 @@ const stratrgy = require('./strategy/signup')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const mime = require('mime');
+const methodOverride = require('method-override')
+const bodyParser = require('body-parser');
+
 
 require('./database/models/user')
 require('./database/mongodb')
@@ -25,17 +28,33 @@ const product = require('./routes/adminproduct')
 const category = require('./routes/category')
 
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+//Static folder
+app.use(express.static(path.join(__dirname, 'public')))
+
+
+//method overiding
+app.use(methodOverride('_method'));
+
+// app.use(methodOverride(function (req, res) {
+//   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+//     // look in urlencoded POST bodies and delete it
+//     var method = req.body._method
+//     delete req.body._method
+//     return method
+//   }
+// }))
 
 // set up session cookies
 app.use(session(
 {
-  secret: 'AVJHJHGFYTFYFUYFKIJOYOLMLSZKK',
+  secret: '******',
   resave: false,
   saveUninitialized: false,
   store : mongoStore.create({
-    mongoUrl: '*******'
+    mongoUrl: '******'
   })
 }
 ))
@@ -70,45 +89,24 @@ app.set('view engine', 'hbs');
 app.set('views', viewspath)
 
 
-
+//method overiding
+app.use(methodOverride(function (req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}))
 
 //calling routes so we can use it
 app.use('/', index)
 app.use('/auth', auth)
 app.use('/user', user)
 app.use('/admin', admin)
-app.use('/dashboard', account)
+app.use('/dashboard/profile', account)
 app.use('/admin/dashboard/product', product)
 app.use('/admin/dashboard/category', category)
-
-
-// const storage = multer.diskStorage({
-//   filename: (req, file, cb) => {
-//     cb(null, Date.now() + '-' + file.originalname);
-//   }
-// });
-// const upload = multer({ storage: storage });
-
-// cloudinary.config({
-//   cloud_name: "dwe8h5aqc",
-//   api_key: "478185315828577",
-//   api_secret: "pViJOMPLiMdwTWNplLeAfLYx9eM"
-// });
-
-// app.post('/upload', upload.single('image'), (req, res) => {
-//   // Use cloudinary to upload the image
-//   cloudinary.uploader.upload(req.file.path, (error, result) => {
-//     if (error) {
-//       console.error(error);
-//       return res.redirect('/error');
-//     }
-//     // Save the result to your database or do something else with it
-//     console.log(result);
-//     res.send('sucessful');
-//   });
-// });
-
-
 
 
 //PORT

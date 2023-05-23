@@ -29,7 +29,22 @@
 
 
     {{/if}} --}}
+    <div class="mainn">
 
+   {{#if user}}
+
+      <div class="aftermainn">
+        <a href="/" class="dashboardlogo">HI Welcome Back</a>
+        <img src="{{ user.image}}" alt="">
+
+        <p> {{ user.lastName}} {{ user.firstName }}<br> <span>{{ user.email}}</span></p>
+
+
+
+      </div>
+   {{/if}}
+</div>
+<p class="green-text">{{message}}  </p>
     <div class="profile-container">
       {{#if user}}
 
@@ -56,9 +71,10 @@
             <p class="right-line-divider"></p>
 
             <div style="padding-top: 50px;">
-            <a href="/profile" class="editprofile">EDIT PROFILE INFO</a>
+            <a href="/dashboard/profile/user/{{user._id}}" class="editprofile">EDIT PROFILE INFO</a>
 
             </div>
+
       {{/if}}
     </div>
 </div>

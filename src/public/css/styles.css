@@ -73,6 +73,7 @@ font-family: 'Roboto', sans-serif;
 padding: 0px 20px;
 
 }
+
 .container-2 > h6{
     margin-bottom: 50px;
     color: #2e7d32;
@@ -94,6 +95,73 @@ padding: 0px 20px;
     color: #363636;
     text-align: center;
     margin-bottom: 50px;
+}
+.editcontainer{
+  margin-left: 230px;
+  margin-top: 20px;
+
+font-family: 'Comme', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+
+.edit-save{
+  display: flex;
+ justify-content:flex-end;
+ margin-right: 50px;
+
+}
+
+.edit-save > a{
+  border: 1px solid #a3dda6;;
+  padding: 5px 18px;
+  border-radius: 5px;
+}
+.editcontainer > a{
+  margin-top: 20px;
+  color: rgb(171, 169, 169);
+  font-size: 26px;
+
+}
+
+.editcontainer > form{
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  width: 1000px;
+  height: 500px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+}
+
+.edit-firstside{
+  padding-top: 30px;
+
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.edit-firstside >img{
+  border-radius: 100px;
+  margin-left: 33px;
+  width: 100px;
+}
+
+.edit-firstside > h4{
+  text-align: center;
+}
+
+.edit-firstside > p{
+  font-size: 13px;
+  color: rgb(192, 189, 189);
+}
+
+.edit-secondside{
+  margin-top: 20px;
+}
+.edit-secondside > div {
+  margin-top: 50px;
 }
 .google{
     margin-left: 35px;
@@ -265,15 +333,16 @@ hr.solid {
 }
 .profile-img{
   margin: 15px ;
-  border-radius: 50px;
+  border-radius: 10px;
+  width: 70px;
 }
 .after-profile-container{
-  margin-left: 30px;
+  margin-left: 10px;
   margin-top: 17px;
 }
 .right-line-divider{
   border-right: 3px solid rgb(213, 209, 209);
-  margin-left: 100px;
+  margin-left: 7%;
 
 }
 .adminaccessdropdown{
@@ -305,7 +374,7 @@ hr.solid {
   height: 50px;
   padding: 10px 20px;
   margin-top: 50px;
-  margin-left: 60px;
+  margin-left: 10px;
 
 }
 .editprofile:hover{
@@ -478,6 +547,25 @@ hr.solid {
     margin-top: 20px;
   }
 
+  .form-submitted{
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-align: center;
+    animation: fadein 5s ease-in-out;
+  }
+  /* .form-submitted{
 
+  } */
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
   
