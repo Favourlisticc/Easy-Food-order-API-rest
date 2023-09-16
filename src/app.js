@@ -89,15 +89,15 @@ app.set('view engine', 'hbs');
 app.set('views', viewspath)
 
 
-//method overiding
-app.use(methodOverride(function (req, res) {
-  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-    // look in urlencoded POST bodies and delete it
-    var method = req.body._method
-    delete req.body._method
-    return method
-  }
-}))
+// //method overiding
+// app.use(methodOverride(function (req, res) {
+//   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+//     // look in urlencoded POST bodies and delete it
+//     var method = req.body._method
+//     delete req.body._method
+//     return method
+//   }
+// }))
 
 //calling routes so we can use it
 app.use('/', index)

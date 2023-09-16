@@ -39,6 +39,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "surge": "^0.23.1"
   }
 }
