@@ -9,7 +9,7 @@ const stratrgy = require('./strategy/signup')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const mime = require('mime');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 
 
