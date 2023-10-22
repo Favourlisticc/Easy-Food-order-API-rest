@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 mongoose
-.connect('mongodb+srv://favour:favoursu@cluster0.1i4m3zl.mongodb.net/test')
-.then(() => console.log(`connected to DB`))
-.catch((err) => console.log(err));
+    .connect("mongodb+srv://favoursunday600:Favoursu@cluster0.ovy8rh1.mongodb.net/test")
+    .then(() => console.log(`Connected to DB`))
+    .catch((err) => console.error(err));
