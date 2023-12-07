@@ -14,7 +14,7 @@ const requireAdmin = (req, res, next) => {
   next();
 }
 
-User.grantAdminAccess('6466940639e49945c89f5a2e')
+User.grantAdminAccess('6571f6a38de2010f221361bb')
   .then(user => {
     console.log(`User ${user.firstName} granted admin access.`);
   })
